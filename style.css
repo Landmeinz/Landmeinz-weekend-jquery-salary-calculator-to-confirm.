@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: sans-serif;
 }
 
 h1 {
@@ -9,6 +10,10 @@ h1 {
 
 h2 {
     margin: 0 0 2% 0;
+}
+
+h3 {
+    margin: 5% 0 0 0;
 }
 
 body {
@@ -23,6 +28,8 @@ header {
 
 input {
     width: 100px;
+    border-radius: 5px;
+    padding: 1%;
 }
 
 table {
