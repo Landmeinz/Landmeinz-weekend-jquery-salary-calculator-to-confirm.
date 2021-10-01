@@ -18,7 +18,7 @@ No files have been provided (just instructions.md and a readme.md). Instead of f
 
 ### Wireframe
 
-![Wireframe](salary-calc-wireframe.png)
+![Wireframe](salary-calc-wireframe.png)****
 
 ## Stretch Mode
 

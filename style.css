@@ -1,4 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin: 0 0 2% 0;
+}
+
 body {
     background-color: black;
     color: white;
+    margin: 2%;
+}
+
+header {
+    padding: 5%;
+}
+
+input {
+    width: 100px;
+}
+
+table {
+    margin: 2% 0 0 0;
+}
+th {
+    border: 1px solid red;
+    width: 300px; 
+    padding: 1%;
+    margin: 1%;
 }

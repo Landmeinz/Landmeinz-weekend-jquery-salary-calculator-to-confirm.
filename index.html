@@ -4,16 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" href="style.css">
-
     <script src="jquery-3.6.0.min.js"></script>
     <script src="app.js"></script>
-
-
-    <title>Document</title>
+    <title>Salary Calculator</title>
 </head>
 <body>
     
+    <header><h1>Salary Calculator</h1></header> 
+
+    <h2>Add Employee</h2>
+
+    <!-- input fields that we will get our table data from -->
+    <div class="container">
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <input type="text" placeholder="ID #">
+        <input type="text" placeholder="Title">
+        <input type="text" placeholder="Annual Salary">
+        <button id="submitButton">Submit</button>
+    </div>
+
+    <table class="container"> 
+        <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID #</th>
+            <th>Title</th>
+            <th>Annual Salary</th>
+        </thead>
+    </table>
+
 </body>
 </html>
