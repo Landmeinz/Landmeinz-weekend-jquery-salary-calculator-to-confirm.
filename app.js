@@ -5,12 +5,19 @@ let employeeList = [];
 let runningTotal = 0;
 
 
-// function to DISPLAY all of the persons info to the DOM; 
-function renderDOM(){
-    // dump any old inputs before we loop;
-    emptyInputs();
-    // dump out the array before we loop again to grab more info; prevents the double display issue; 
-    employeeList = [];
+// records employee salaries and adds salaries up to report monthly costs; 
+function handleStart(){
+    // console.log('jq connected');
+    // when the inputs are filled; push to table when the submitButton is clicked;
+    $(`#submitButton`).on(`click`, addEmployee);
+    // when we are done with this person remove them from the DOM when clicked; 
+    $(`#displayEmployee`).on(`click`, `.remove-button`, removeEmployee);
+}
+
+
+
+// RENDER all of the persons info on the DOM; 
+function render(){
 
     // accessing the people that make up the array of employees; 
     for(let person of employeeList){
@@ -26,15 +33,51 @@ function renderDOM(){
         </tr>
         `);
 
-        // adding each person to the employeeList;
-        employeeList.push(person);
-        console.log(employeeList);
-
         // table row data displaying on the DOM in the <tbody> 
         $(`#displayEmployee`).append(tableRowData);
-
-        calcTotal();
     } 
+    calcTotal();
+}
+
+
+
+// GET info from the DOM inputs and push them to our employeeList;
+function addEmployee(){
+    console.log('--- submit button clicked');
+
+    // created an object with keys; this gets the inputs off the dom to store in our table data;
+    const tableData = {
+        firstName: $(`#inputFirstName`).val(),
+        lastName: $(`#inputLastName`).val(),
+        number: $(`#inputNumber`).val(),
+        title: $(`#inputTitle`).val(),
+        salary: $(`#inputSalary`).val(),
+    }
+    // console.log(tableData);
+
+    // all fields must be completed; dont allow the user to add empty info; 
+    if(tableData.firstName === ''   || 
+        tableData.lastName === ''   ||
+        tableData.number === ''     ||
+        tableData.title === ''      ||
+        tableData.salary === ''     ){
+
+        // log and alert user of their error; 
+        console.log(`submit failed; provide inputs`)
+        return alert(`Add all info to submit`);
+
+    } else { // lets push data into our employeeList array;
+        employeeList.push(tableData);
+    }
+    
+    // the big reveal; 
+    render();
+    emptyInputs();
+    
+    console.log(employeeList);
+    // dump out the array before we loop again to grab more info; prevents the double display issue; 
+    employeeList = [];
+
 }
 
 
@@ -50,11 +93,13 @@ function emptyInputs(){
 
 
 
-// function to calc our MONTHLY; this should alter the employeeList; 
+// function to calc our MONTHLY; this should pull from the employeeList; avoid using the input form directly; 
 function calcTotal(){
-
+    console.log(employeeList);
+    for(let person of employeeList){
+        salary = person.salary;
+    }
     // get the employee annual salary; we want a monthly expense so lets divide by 12;
-    let salary = employeeList.salary;
     console.log(salary);
     salary = parseInt(salary / 12);
 
@@ -66,7 +111,7 @@ function calcTotal(){
     // add the persons salary to the running total; 
     runningTotal += Number(salary);
     runningTotal = parseInt(runningTotal); 
-    console.log('calculating total monthly:', runningTotal);
+    // console.log('calculating total monthly:', runningTotal);
 
     // change the text color to red on the DOM; both <h3> text and the displayed <span> text;
     if(runningTotal > 20000){
@@ -78,96 +123,47 @@ function calcTotal(){
 
 
 
-
-
-
-// function to GET the persons INFO from our DOM inputs into our employeeList;
-function addEmployee(){
-    console.log('(1) submit button clicked');
-
-    // created an object with keys to store our table data;
-    const tableData = {
-        firstName: $(`#inputFirstName`).val(),
-        lastName: $(`#inputLastName`).val(),
-        number: $(`#inputNumber`).val(),
-        title: $(`#inputTitle`).val(),
-        salary: $(`#inputSalary`).val(),
-    }
-    // console.log(tableData);
-
-    // all fields must be completed; dont allow the user to add empty info; 
-    if(tableData.firstName === '' || 
-        tableData.lastName === '' ||
-        tableData.number === '' ||
-        tableData.title === '' ||
-        tableData.salary === '' ){
-
-        // log and alert user of their error; 
-        console.log(`submit failed; provide inputs`)
-        return alert(`Add all info to submit`);
-
-    } else {
-        // lets push data into our employeeList array;
-        employeeList.push(tableData)
-        console.log(employeeList);
-    }
-    
-    // the big reveal; 
-    renderDOM();
-}
-
-
-
 // function to turn our large numbers into a sting that's something more readable; $24500 to $24,500;
 function numberWithCommas(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 
-
-
-
-
-// when removed button is pushed decrease total;
-function removedTotal(){
-    console.log(employeeList);
-    console.log(runningTotal);
+// // when removed button is pushed decrease total;
+// function removedTotal(){
+//     console.log(employeeList);
+//     console.log(runningTotal);
     
-    // target the html <span> input value;
-    let totalMonthlyDisplay = $('#totalMonthlyDisplay');
+//     // target the html <span> input value;
+//     let totalMonthlyDisplay = $('#totalMonthlyDisplay');
     
-    // use for loop to 
-    for(let person in employeeList){
-        runningTotal += employeeList[person].salary;
-        console.log(person.salary);
-        
-    }
+//     // use for loop to do some shit; 
+//     for(let person in employeeList){
+//         runningTotal += employeeList[person].salary;
+//         console.log(person.salary);
+//     }
 
-    runningTotal = parseInt(runningTotal); 
-    console.log('reducing total monthly:', runningTotal);
+//     runningTotal = parseInt(runningTotal); 
+//     console.log('reducing total monthly:', runningTotal);
 
-    return totalMonthlyDisplay.text(numberWithCommas(runningTotal));
+//     return totalMonthlyDisplay.text(numberWithCommas(runningTotal));
 
-}
+// }
+
 
 
 // REMOVE the employee row of data from the DOM; log who was removed to a new array?
 function removeEmployee(){
-    console.log(`(2) removed button clicked`);    
+    console.log(`--- removed button clicked`);    
+    console.log(employeeList);
 
-    console.log($(this).closest(`tr`).index());
+    let index = $(this).closest(`tr`).index();
+    console.log('index to be removed:', index);
+
+    // idk if this is working;
+    employeeList.splice(index, 1)
+    console.log(employeeList);
+
     // targeting the row adjacent to the button; 
     $(this).closest(`tr`).remove();
-   
-    console.log(employeeList);
-}
-
-
-// records employee salaries and adds salaries up to report monthly costs; 
-function handleStart(){
-    // console.log('jq connected');
-    // when the inputs are filled; push to table when the submitButton is clicked;
-    $(`#submitButton`).on(`click`, addEmployee);
-    // when we are done with this person remove them from the DOM when clicked; 
-    $(`#displayEmployee`).on(`click`, `.remove-button`, removeEmployee);
 }

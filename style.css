@@ -4,23 +4,38 @@
     font-family: sans-serif;
     background-color: black;
     color: white;
+    border: 1px solid white; 
+}
+
+:root {
+
 }
 
 h1 {
     text-align: center;
 }
-
 h2 {
     margin: 0 0 2% 0;
 }
-
 h3 {
     margin: 5% 0 0 0;
 }
-
 body {
-    
     margin: 2%;
+}
+
+.container {
+
+
+}
+
+.input {
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+}
+
+.table {
+    width: 600px;
 }
 
 header {
@@ -28,9 +43,14 @@ header {
 }
 
 input {
-    width: 100px;
-    border-radius: 5px;
-    padding: 1%;
+    border-radius: 10px;
+    padding: 5%;
+    margin: 0 5% 0 5%; 
+}
+
+button {
+    border-radius: 10px;
+    padding: 5%;
 }
 
 table {
@@ -38,8 +58,8 @@ table {
 }
 th {
     border: 1px solid red;
-    width: 300px; 
     padding: 1%;
     margin: 1%;
 }
+
 
