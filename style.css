@@ -17,8 +17,8 @@ h1 {
 
 body {
     margin: 20px;
-    min-width: 500px;
-    max-width: 900px;
+    min-width: 725px;
+
     margin: 0 auto 0 auto;
     padding: 4%;
 }
@@ -45,7 +45,9 @@ header {
     grid-template-columns: repeat(1, 1fr);
     /* grid-template-rows: 1fr .25fr .5fr .25fr 1fr .5fr; */
     justify-content: center;
-    border: 1px solid red; 
+    padding: 1.5%;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 input {
@@ -55,62 +57,76 @@ input {
     width: 85%;
 }
 .submit-button {
-    border-radius: 20px;
+    border-radius: 15px;
     margin: 1%;
     padding: 1%;
     width: 90%;
+    background-color: hsla(220, 80%, 50%, .9);
+    color: white; 
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.submit-button:hover {
+    background-color: hsla(220, 80%, 30%, .9);
+    cursor: pointer;
 }
 
 .input-container {
     display: flex;
     flex-direction: row;
-    border: 1px solid blue;
     justify-content: center;
     
 }
 .left {
     width: 33%;
-    border: 1px solid red; 
 }
 .center {
     width: 33%; 
-    border: 1px solid red; 
 }
 .right {
     width: 33%;
-    border: 1px solid red; 
 }
 
 .table-container {
     display: grid;
     grid-column: 1 / span 6;
-    border: 1px solid red; 
 }
-.table-header {
-    display: flex;
-    justify-content: flex-start;
+table-thead {
+
+}
+.table-header-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
 }
 .table-body{
-    /* width: 100%;
-    display: flex;
-    flex-direction: row;
-    border: 1px solid blue;  */
+   
+}
+.table-body-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    background-color: white; 
+    vertical-align: bottom;
 }
 
 th {
-    width: 100%;
-    border: 1px solid blue; 
+    padding: 1% 0 1% 0;
+    border-bottom: 1px solid lightgray;
+
 }
 td {
-    width: 20%;
-    border: 1px solid blue; 
+    display: grid;
+    justify-content: space-around;
+    border-bottom: 1px solid lightgray;
+    vertical-align: bottom;
+    align-content: flex-end;
+    height: 30px;
+}
+tbody tr:hover {
+    background-color: hsla(0, 0%, 95%, 1)
 }
 
 .total-monthly {
     margin: 10% 0 0 0;
-    display: grid;
-    grid-column: 1 / span 6;
-    width: 100%;
+    display: inline;
 }
 
 .button-blank {
@@ -119,4 +135,13 @@ td {
 
 .remove-button {
     width: 80px; 
+    height: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.remove-button:hover {
+    background-color: red;
+    cursor: pointer;
+    color: white; 
 }

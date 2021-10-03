@@ -23,7 +23,7 @@ function render(){
     for(let person of employeeList){
         // actual data to be pushed into our html <tbody id="displayEmployee">;
         const tableRowData = $(`
-        <tr>
+        <tr class="table-body-row">
             <td>${person.firstName}</td>
             <td>${person.lastName}</td>
             <td>${person.number}</td>
