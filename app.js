@@ -80,6 +80,7 @@ function addEmployee(){
     
     console.log(employeeList);
     // dump out the array before we loop again to grab more info; prevents the double display issue; 
+    // doing this causes more problems; 
     employeeList = [];
 }
 
