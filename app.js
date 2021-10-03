@@ -40,6 +40,10 @@ function render(){
 }
 
 
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
 
 // GET info from the DOM inputs and push them to our employeeList;
 function addEmployee(){
@@ -47,10 +51,10 @@ function addEmployee(){
 
     // created an object with keys; this gets the inputs off the dom to store in our table data;
     const tableData = {
-        firstName: $(`#inputFirstName`).val(),
-        lastName: $(`#inputLastName`).val(),
+        firstName: capitalizeFirstLetter($(`#inputFirstName`).val()),
+        lastName: capitalizeFirstLetter($(`#inputLastName`).val()),
         number: $(`#inputNumber`).val(),
-        title: $(`#inputTitle`).val(),
+        title: capitalizeFirstLetter($(`#inputTitle`).val()),
         salary: $(`#inputSalary`).val(),
     }
     // console.log(tableData);
