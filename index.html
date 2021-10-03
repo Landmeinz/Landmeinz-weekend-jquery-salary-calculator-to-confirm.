@@ -11,46 +11,51 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="main-container">
     
         <header><h1>Salary Calculator</h1></header> 
 
-        <h2>Add Employee</h2>
+        <h3 class="add-employee">Add Employee</h3>
 
         <!-- input fields that we will get our table data from -->
-        <div class="input">
-            <input id="inputFirstName" type="text" placeholder="First Name">
-            <input id="inputLastName" type="text" placeholder="Last Name">
-            <input id="inputNumber" type="number" placeholder="ID #">
-            <input id="inputTitle" type="text" placeholder="Title">
-            <input id="inputSalary" type="number" placeholder="Annual Salary">
-            <button id="submitButton">SUBMIT</button>
+        <div class="input-container">
+            <div class="input-content">
+                <input id="inputFirstName" type="text" placeholder="First Name">
+                <input id="inputLastName" type="text" placeholder="Last Name">
+                <input id="inputNumber" type="number" placeholder="ID #">
+                <input id="inputTitle" type="text" placeholder="Title">
+                <input id="inputSalary" type="number" placeholder="Annual Salary">
+                <button class="submit-button" id="submitButton">SUBMIT</button>
+            </div>
         </div>
+        
 
-        <table class="table"> 
-            <h3>Employees</h3>
-            <thead>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>ID #</th>
-                <th>Title</th>
-                <th>Annual Salary</th>
-                <!-- blank space for our delete button -->
-                <th></th>
-            </thead>
+        <table class="table-container"> 
+            <div class="table-content">
+                <h3 class="employees">Employees</h3>
+                <thead class="table-header">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID #</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                    <!-- blank space for our delete button -->
+                    <th class="button-blank"></th>
+                </thead>
 
-            <tbody id="displayEmployee">
-                <!-- this data will be created by jq using our inputs above -->
-                <!-- <td>Eric</td>
-                <td>Meinzer</td>
-                <td>7310</td>
-                <td>Worker</td>
-                <td>80,350</td>
-                <td> <button>Delete</button> </td> -->
-            </tbody>
+                <tbody id="displayEmployee">
+                    <!-- this data will be created by jq using our inputs above -->
+                    <!-- <td>Eric</td>
+                    <td>Meinzer</td>
+                    <td>7310</td>
+                    <td>Worker</td>
+                    <td>80,350</td>
+                    <td> <button>Delete</button> </td> -->
+                </tbody>
+            </div>
         </table>
 
-        <h3 id="totalMonthlyText">Total Monthly: $<span id="totalMonthlyDisplay"></span> </h3>
+        <h3 class="total-monthly" id="totalMonthlyText">Total Monthly: $<span id="totalMonthlyDisplay"></span> </h3>
    
     </div>
 
