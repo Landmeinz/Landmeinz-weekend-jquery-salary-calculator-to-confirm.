@@ -81,7 +81,6 @@ function addEmployee(){
     console.log(employeeList);
     // dump out the array before we loop again to grab more info; prevents the double display issue; 
     employeeList = [];
-
 }
 
 
@@ -127,7 +126,7 @@ function calcTotal(){
 
 
 
-// function to turn our large numbers into a sting that's something more readable; $24500 to $24,500;
+// function to turn our large numbers into a string that's something more readable; $24500 to $24,500;
 function numberWithCommas(num) {
     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

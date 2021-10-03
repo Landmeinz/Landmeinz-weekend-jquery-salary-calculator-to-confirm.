@@ -58,12 +58,19 @@ input {
     width: 85%;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
+input:hover {
+    background-color: hsla(0, 0%, 95%, .9);
+}
+input:focus {
+    background-color: hsla(0, 0%, 95%, .9);
+}
+
 .submit-button {
     border-radius: 15px;
     margin: 1%;
     padding: 2%;
     width: 90%;
-    background-color: hsla(220, 80%, 60%, .9);
+    background-color: hsla(220, 80%, 60%, 1);
     color: white; 
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
@@ -107,7 +114,7 @@ input {
 }
 
 th {
-    padding: 1% 0 1% 0;
+    padding: 1% 0 5% 0;
     border-bottom: 1px solid lightgray;
     
 
@@ -121,7 +128,8 @@ td {
     height: 30px;
 }
 tbody tr:hover {
-    background-color: hsla(0, 0%, 95%, 1)
+    background-color: hsla(0, 0%, 95%, .9);
+}
 }
 td button {
     display: grid;
