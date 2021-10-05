@@ -13,6 +13,7 @@
 
 h1 {
     text-align: center;
+    color: darkgreen;
 }
 
 body {
@@ -109,14 +110,18 @@ input:focus {
     grid-template-columns: repeat(6, 1fr);
     background-color: white; 
     vertical-align: bottom;
+}
 
+.bottom-bar {
+    background-color: darkgrey;
+    width: 100%;
+    border-radius: 5px;
+    height: 2px;
 }
 
 th {
     padding: 1% 0 5% 0;
     border-bottom: 1px solid lightgray;
-    
-
 }
 td {
     display: grid;
@@ -138,8 +143,8 @@ td button {
 }
 
 .total-monthly {
-    margin: 5% 0 0 1%;
-    display: inline;
+    margin: 2% 0 0 1%;
+
 }
 
 .button-blank {
