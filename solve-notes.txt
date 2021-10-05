@@ -1,0 +1,42 @@
+2021-10-04; monday solve notes; structure notes;
+
+// to copy a file from your desktop to your current vscode file;
+terminal: cp~/Desktop/jquery.js ./ 
+    cp = copy
+    location
+    file name
+    ./ === current file?
+
+
+// in  your browser console out jquery elements and they will highlight them on the html; 
+
+// new errors are good errors; 
+
+// you can only target 1 id at a time; use class if you are dealing with multiples of an element; ie multiple buttons;
+
+// start off by just making a list of shit you need to do;
+// all of these should be testable and commit it;
+// write a line of code; test; verify; then commit it;
+
+[]setup html
+    [x]index.html
+    [x]style.css
+
+[]input form
+    []firstName
+    []LastName
+    []id
+    []job title
+    []annual salary
+
+[]submit button 
+    []store the info
+    []calc monthly cost
+    []append to the DOM
+    []clear the input table
+
+render monthly to the DOM
+if > 20k change css to red
+delete button to remove from DOM
+
+

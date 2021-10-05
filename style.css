@@ -130,7 +130,7 @@ td {
 tbody tr:hover {
     background-color: hsla(0, 0%, 95%, .9);
 }
-}
+
 td button {
     display: grid;
     justify-content: center;
