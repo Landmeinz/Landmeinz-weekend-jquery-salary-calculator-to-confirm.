@@ -4,7 +4,6 @@ $(handleStart);
 
 let employeeList = [];
 
-
 // records employee salaries and adds salaries up to report monthly costs; 
 function handleStart(){
     // console.log('jq connected');
@@ -12,9 +11,6 @@ function handleStart(){
     $(`#submitButton`).on(`click`, addEmployee);
     // when we are done with this person remove them from the DOM when clicked; 
     $(`#displayEmployee`).on(`click`, `.remove-button`, removeEmployee);
-
-    // could use document here;
-    // $(document).on(`click`, `.remove-button`, removeEmployee);
 }
 
 
@@ -49,9 +45,6 @@ function render(){
         TotalMonthlyCosts += monthlyCosts; 
     }
     console.log(`total monthly costs: ${TotalMonthlyCosts}`);
-    // // get the employee annual salary; we want a monthly expense so lets divide by 12;
-    // console.log(salary);
-    // salary = parseInt(salary / 12);
 
     // target the html <span> input value;
     let totalMonthlyDisplay = $('#totalMonthlyDisplay');
@@ -60,10 +53,6 @@ function render(){
 
     totalMonthlyDisplay.text(numberWithCommas(TotalMonthlyCosts));
     
-    // // add the persons salary to the running total; 
-    // runningTotal += Number(salary);
-    // runningTotal = parseInt(runningTotal); 
-    // // console.log('calculating total monthly:', runningTotal);
 
     // change the text color to red on the DOM; both <h3> text and the displayed <span> text;
     if(TotalMonthlyCosts > 20000){
@@ -114,9 +103,6 @@ function addEmployee(){
     emptyInputs();
     
     console.log(employeeList);
-    // dump out the array before we loop again to grab more info; prevents the double display issue; 
-    // doing this causes more problems; 
-    // employeeList = [];
 }
 
 
@@ -129,36 +115,6 @@ function emptyInputs(){
     $(`#inputTitle`).val('');
     $(`#inputSalary`).val('');
 }
-
-
-
-// function to calc our MONTHLY; this should pull from the employeeList; avoid using the input form directly; 
-// function calcTotal(){
-//     console.log(employeeList);
-//     for(let person of employeeList){
-//         salary = person.salary;
-//     }
-//     // get the employee annual salary; we want a monthly expense so lets divide by 12;
-//     console.log(salary);
-//     salary = parseInt(salary / 12);
-
-//     // target the html <span> input value;
-//     let totalMonthlyDisplay = $('#totalMonthlyDisplay');
-//     // target the html <h3> text; 
-//     let totalMonthlyText = $(`#totalMonthlyText`);
-    
-//     // add the persons salary to the running total; 
-//     runningTotal += Number(salary);
-//     runningTotal = parseInt(runningTotal); 
-//     // console.log('calculating total monthly:', runningTotal);
-
-//     // change the text color to red on the DOM; both <h3> text and the displayed <span> text;
-//     if(runningTotal > 20000){
-//         totalMonthlyText.css(`color`, `red`);
-//         totalMonthlyDisplay.css(`color`, `red`);
-//     }
-//     totalMonthlyDisplay.text(numberWithCommas(runningTotal));
-// };
 
 
 
@@ -187,25 +143,3 @@ function removeEmployee(){
 
     render();
 }
-
-
-// // when removed button is pushed decrease total;
-// function removedTotal(){
-//     console.log(employeeList);
-//     console.log(runningTotal);
-    
-//     // target the html <span> input value;
-//     let totalMonthlyDisplay = $('#totalMonthlyDisplay');
-    
-//     // use for loop to do some shit; 
-//     for(let person in employeeList){
-//         runningTotal += employeeList[person].salary;
-//         console.log(person.salary);
-//     }
-
-//     runningTotal = parseInt(runningTotal); 
-//     console.log('reducing total monthly:', runningTotal);
-
-//     return totalMonthlyDisplay.text(numberWithCommas(runningTotal));
-
-// }
